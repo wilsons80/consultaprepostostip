@@ -1,0 +1,8 @@
+${jboss.deploy}
+target/
+nb-configuration.xml
+.settings/
+.classpath
+.project
+.metadata
+.git/

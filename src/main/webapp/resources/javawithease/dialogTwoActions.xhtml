@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!--
+Sistema que está fazendo uso desse componente: 
+   Nome do Sistema: projeto
+   Formulário HTML: formCadastroNota.xhtml
+
+Configurações:
+  1- Acrescentera as configurações abaixo no arquivo web.xml
+		<context-param>
+			<param-name>javax.faces.FACELETS_LIBRARIES</param-name>
+			<param-value>/WEB-INF/javawithease.taglib.xml</param-value>
+		</context-param>
+  
+  2- Colocar os componentes personalizados, como este arquivo (dialogTwoActions.xhtml), 
+     dentro da pasta webapp/resources/javawithease  		
+  
+  3- Declarar o namespace no formulário que fará uso:
+    	xmlns:comp="http://java.sun.com/jsf/composite/javawithease"
+    
+    
+Componente personalizado que exibe uma dialog com dois botões, cada um com uma action possível.
+
+Exemplo de uso:
+	 <p:commandButton value="Voltar" 
+	                  icon="ui-icon-arrowreturnthick-1-w" 
+	                  style="margin-left: 10px" 
+	                  ajax="false"
+	                  immediate="true"
+	                  onclick="PF('dlgVoltarNota').show(); return false;"/>
+     <comp:dialogTwoActions myheader   ="Cadastro de Nota"
+                            mywidgetvar="dlgVoltarNota"
+                            myMessage  ="Deseja salvar o registro antes de sair ?"
+                            btn1Text   ="Não"
+                            btn1Icon   ="ui-icon-close"
+                            btn1Action ="#{notaBean.voltar()}"
+                            btn2Text   ="Sim"
+                            btn2Icon   ="ui-icon-check"
+                            btn2Action ="#{notaBean.voltarSalvando()}"/>               
+ 
+ -->
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:composite="http://java.sun.com/jsf/composite"
+    xmlns:ui="http://java.sun.com/jsf/facelets" 
+    xmlns:p="http://primefaces.org/ui">
+	
+<composite:interface>    
+      <composite:attribute name="myheader" />
+      <composite:attribute name="mywidgetvar" />
+      <composite:attribute name="myMessage" />
+
+      <composite:attribute name="btn1Text" />
+      <composite:attribute name="btn1Icon" />
+      <composite:attribute name="btn1Action" method-signature="java.lang.String action()" /> 
+
+      <composite:attribute name="btn2Text" />
+      <composite:attribute name="btn2Icon" />
+      <composite:attribute name="btn2Action" method-signature="java.lang.String action()" /> 
+</composite:interface>
+  
+<composite:implementation>  
+	  <p:dialog header="#{cc.attrs.myheader}"
+	            widgetVar="#{cc.attrs.mywidgetvar}"
+	            minHeight="40"
+	            resizable="false"
+	            modal="true">
+	   		<span class="ui-icon ui-confirm-dialog-severity ui-icon-alert"/>
+		    <h:outputText value="#{cc.attrs.myMessage}"/>
+		    <br/><br/>
+		    <hr/>
+			<p:commandButton value="#{cc.attrs.btn1Text}" 
+	   			             ajax="false"
+			                 icon="#{cc.attrs.btn1Icon}"
+			                 action="#{cc.attrs.btn1Action}"/>
+			<p:commandButton value="#{cc.attrs.btn2Text}" 
+	   			             ajax="false"
+	                         icon="#{cc.attrs.btn2Icon}"
+			                 action="#{cc.attrs.btn2Action}"
+	                         style="margin-left:10px"/>
+	  </p:dialog>				   
+</composite:implementation>
+</html>

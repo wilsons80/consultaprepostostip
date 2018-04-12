@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	version="3.1">
+
+	<display-name>consultaprepostostip</display-name>
+
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+
+	<context-param>
+		<param-name>javax.faces.FACELETS_SKIP_COMMENTS</param-name>
+		<param-value>true</param-value>
+	</context-param>
+
+    <!-- Configura o TIMEZONE para campos com Datas -->
+	<context-param>
+		<param-name>javax.faces.DATETIMECONVERTER_DEFAULT_TIMEZONE_IS_SYSTEM_TIMEZONE</param-name>
+		<param-value>true</param-value>
+	</context-param>
+
+	<!-- HABILITA OS ICONES Font Awesome -->
+    <context-param>
+        <param-name>javax.faces.FONT_AWESOME</param-name>
+    	<param-value>true</param-value>
+	</context-param>
+
+	<servlet>
+		<servlet-name>Faces Servlet</servlet-name>
+		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.jsf</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 
+	<mime-mapping>
+	    <extension>eot</extension>
+		<mime-type>font-awesome/4.7.0/fonts/fontawesome-webfont.eot</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+	    <extension>woff2</extension>
+		<mime-type>font-awesome/4.7.0/fonts/fontawesome-webfont.woff2</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+	    <extension>woff</extension>
+		<mime-type>font-awesome/4.7.0/fonts/fontawesome-webfont.woff</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+	    <extension>ttf</extension>
+		<mime-type>font-awesome/4.7.0/fonts/fontawesome-webfont.ttf</mime-type>
+	</mime-mapping>
+	 -->
+</web-app>

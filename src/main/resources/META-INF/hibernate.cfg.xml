@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory name="dftrans">
+        <property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+        <property name="default_schema">DFTRANS</property>
+        
+		<mapping class="br.com.wcs80.auditoria.entity.Cargo"/>
+		<mapping class="br.com.wcs80.auditoria.entity.CategoriaFuncional"/>
+		<mapping class="br.com.wcs80.auditoria.entity.Documento"/>
+		<mapping class="br.com.wcs80.auditoria.entity.DocumentosPrePreposto"/>
+		<mapping class="br.com.wcs80.auditoria.entity.Funcionario"/>
+		<mapping class="br.com.wcs80.auditoria.entity.IEntityLocal"/>
+		<mapping class="br.com.wcs80.auditoria.entity.ItemTaf"/>
+		<mapping class="br.com.wcs80.auditoria.entity.ItemTipoTaf"/>
+		<mapping class="br.com.wcs80.auditoria.entity.ItensObjetosModulos"/>
+		<mapping class="br.com.wcs80.auditoria.entity.Localidade"/>
+		<mapping class="br.com.wcs80.auditoria.entity.MotivoSaida"/>
+		<mapping class="br.com.wcs80.auditoria.entity.ObjetosModulos"/>
+		<mapping class="br.com.wcs80.auditoria.entity.OpeAlocaPrep"/>
+		<mapping class="br.com.wcs80.auditoria.entity.Operadora"/>
+		<mapping class="br.com.wcs80.auditoria.entity.Permissao"/>
+		<mapping class="br.com.wcs80.auditoria.entity.PessoaFisica"/>
+		<mapping class="br.com.wcs80.auditoria.entity.PessoaJuridica"/>
+		<mapping class="br.com.wcs80.auditoria.entity.PreOpeAlocaPrep"/>
+		<mapping class="br.com.wcs80.auditoria.entity.Preposto"/>
+		<mapping class="br.com.wcs80.auditoria.entity.PrePreposto"/>
+		<mapping class="br.com.wcs80.auditoria.entity.Taf"/>
+		<mapping class="br.com.wcs80.auditoria.entity.TipoLocalidade"/>
+		<mapping class="br.com.wcs80.auditoria.entity.TiposTaf"/>
+		<mapping class="br.com.wcs80.auditoria.entity.Usuario"/>        
+    </session-factory>
+    
+    
+</hibernate-configuration>

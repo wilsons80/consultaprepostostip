@@ -1,0 +1,62 @@
+<ui:composition template="layout.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml" 
+                xmlns:ui="http://java.sun.com/jsf/facelets" 
+                xmlns:h="http://java.sun.com/jsf/html" 
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+	            xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">                
+  
+   <ui:define name="corpo">
+	    <div class="container">
+	    	<h:form id="formConsultaPreposto" prependId="false">
+	    		<p:messages autoUpdate="true"  closable="true" globalOnly="false"/>
+	    		
+	    		<div class="row" style="padding-top: 20px !important;">
+					<div class="col-xs-12 col-sm-3 col-md-3 semBorda semPadding">
+						<div class="form-group">
+		   					<label for="cpf">CPF:</label>
+							<p:inputText class="form-control" 
+							             id="cpf" 
+							             value="#{consultaBean.cpf}"
+							             required="true"
+							             requiredMessage="CPF é obrigatório!"
+								         pt:placeholder="999.999.999-99"/>
+						</div>
+					</div>
+					
+					<div class="col-xs-6 col-sm-3 col-md-2 semBorda semPadding">
+						<div class="form-group">
+							<label for="btnProcurarCPF" style="display: inline-block !important; margin-bottom: 5px;"/>
+							<p:commandButton id="btnProcessarCPF" 
+							                 value="Pesquisar"
+								             class="btn btn-primary btn-block"
+								             action="#{consultaBean.pesquisar()}"
+								             onclick="$(window).scrollTop(0);"
+								             update=":formConsultaPreposto"
+								             ajax="#{jurisprudenciaBean.renderizarCaptchaGoogle}">
+							</p:commandButton>
+						</div>
+					</div>
+					<div class="col-xs-6 col-sm-3 col-md-2 semBorda semPadding">
+						<div class="form-group">
+							<label for="btnLimpar" style="display: inline-block !important; margin-bottom: 5px;"/>
+							<p:commandButton id="btnLimpar" 
+							                 value="Limpar"
+							                 ajax="false"
+								             class="btn btn-primary btn-block"
+								             action="#{consultaBean.limpar()}"
+								             onclick="$(window).scrollTop(0);"
+								             update="@form">
+							</p:commandButton>
+						</div>
+					</div>
+	    		</div>
+				
+	    		<div class="g-recaptcha" 
+	    		     data-sitekey="6LdPJ0EUAAAAAPAvlmpGVzpclD7Du8yyggHoLBJN"></div>
+	    		
+	    	</h:form>
+	    </div>
+   </ui:define>
+
+</ui:composition>

@@ -1,0 +1,63 @@
+@CHARSET "UTF-8";
+
+html, body{
+   margin:0 !important;
+   padding:0 !important;
+   font-family: "Arial", serif !important;
+   font-size: 11px !important;
+   line-height : 10px !important; /* Especifica a distância entre linhas */
+}
+
+
+input{
+   font-family: "Arial", serif !important;;
+   font-size: 12px !important;;
+   height: 16px !important; 
+}
+
+.header {
+  marging-left: 10px;
+	height: 105px;
+	background-position: left center;
+	background-color: #FEAA15;
+	background-repeat: no-repeat;
+}
+
+.headerold{
+   font-family: 'Arial Black',Arial,Helvetica,sans-serif;
+   font-size: 16px;
+   font-weight: bold;
+   height: 105px;
+   color: #184742;/*#376054;*/
+   vertical-align: bottom;
+   display: table-cell;
+   text-align: center;
+   /*background-image: url(#{request.contextPath}/resources/imagens/cab3.png);*/
+   background-position: center top;
+   background-color: #FEAA15;
+   background-repeat: no-repeat;
+
+   /* 
+   Define o tamanho da imagem do Header
+   param 01 : width
+   param 02 : height 
+   */
+   background-size: 1200px 85px;
+}
+
+.panelGridHeaderEsq{
+  background-color: #FEAA15;
+}
+.panelGridHeaderDir{
+  background-color: #FEAA15;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.ui-selectonemenu-filter-container {
+	width: 537px !important;
+}
+
+div.ui-selectonemenu-items-wrapper {
+	width: 1000px !important;
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+      
+  <h:head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+  
+    <meta charset="utf-8"></meta>
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <title>.::Secretaria de Estado de Mobilidade do Distrito Federal - SEMOB::.</title>
+    
+    <meta name="description" content=""></meta>
+    <meta name="author" content="Wilson Souza"></meta>
+    
+    <h:outputStylesheet library="css" name="app.css"/>
+    <h:outputStylesheet library="css" name="mobile.css"/>
+    <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+    <h:outputStylesheet library="css" name="ie10-viewport-bug-workaround.css"/>
+    <h:outputStylesheet library="css" name="navbar-fixed-top.css"/>
+    <h:outputStylesheet library="css" name="grid.css"/>
+    
+    <h:outputScript     library="js"  name="ie-emulation-modes-warning.js"/>
+    <h:outputScript     library="js"  name="jquery.maskedinput.min.js"/>
+
+    <!-- Obrigatório para que os Itens de Menu funcionem 
+    <h:outputScript     library="js"  name="jquery-3.2.1.min.js"/> 
+    -->
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+     
+     
+    <script src='https://www.google.com/recaptcha/api.js?hl=pt-BR' async="async" defer="defer"></script> 
+  </h:head>
+
+  <h:body>
+    <!--
+       Carrega o arquivo sistema.propertie (resources/br/com/wcs80/sistema.properties)
+    -->
+    <f:loadBundle basename="br.com.wcs80.sistema"    var="sistema"/> 
+    <f:loadBundle basename="br.com.wcs80.primefaces" var="msg"/>
+
+    <ui:include src="view/menu.xhtml"></ui:include>
+
+    <!-- Corpo -->
+    <ui:insert name="corpo" ></ui:insert>
+
+    <!-- Habilita o uso da tag <p:confirm> em qualquer formulário da aplicação -->
+    <!-- A tag global="true"permite o uso do confirDialog em qualquer formulário sem a necessidade
+         de especificar na página o p:confirmDialog -->
+    <h:form>
+      <p:confirmDialog global="true">
+        <p:commandButton value="Não" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close"/>
+        <p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check"/>
+      </p:confirmDialog>
+    </h:form>
+    
+  </h:body>
+
+
+  <!-- ================================================== -->
+  <!-- Fica no final para que as páginas sejam carregadas mais rápidas -->
+  <h:outputScript     library="js"  name="ie10-viewport-bug-workaround.js"/>
+  <h:outputScript     library="js"  name="bootstrap.min.js"/>
+
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <h:outputScript     library="js"  name="ie10-viewport-bug-workaround.js"/>
+
+
+  <!-- Chamada para o CSS do Font Awesome (Icones)-->
+  <script src="https://use.fontawesome.com/f631d12479.js"></script>
+
+</html>
